@@ -5,6 +5,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Home',
         component: () => import('@/views/home.vue')
     },
+    // 添加子应用的挂载点
+    {
+        path: '/tools_web',
+        component: () => import('../components/tools_web.vue'),
+    },
 ]
 
 const router = createRouter({
