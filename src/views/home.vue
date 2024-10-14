@@ -45,31 +45,32 @@ onUpdated(()=>{
 onUnmounted(()=>{
 })
 const nextItem = () => {
-  currentItem.value = remarkList.value[currentIndex.value];
-  currentIndex.value = (currentIndex.value + 1) % remarkList.value.length;
-  startTyping(currentItem.value)
+  if (!intervalId.value) {
+    currentItem.value = remarkList.value[currentIndex.value];
+    currentIndex.value = (currentIndex.value + 1) % remarkList.value.length;
+    console.log(currentItem.value,'currentItem.value')
+    startTyping(currentItem.value)
+  }
 };
 const startLoop = ()=>{
   nextItem()
-  const intervalLoop = setInterval(nextItem, 3000); // 每 2 秒切换到下一个项目
+  const intervalLoop = setInterval(nextItem, 1000); // 每 3 秒切换到下一个语句
   onUnmounted(() => {
     clearInterval(intervalLoop);
   });
 }
 const startTyping = (val) => {
   let index = 0;
-  if(intervalId.value) {
-    clearInterval(intervalId.value);
-  } else {
-    intervalId.value = setInterval(() => {
-      if (index < val.length) {
-        currentText.value += val.charAt(index);
-        index++;
-      } else {
-        clearInterval(intervalId.value);
-      }
-    }, 200); // 每 200 毫秒显示一个字
-  }
+  currentText.value=''
+  intervalId.value = setInterval(() => {
+    if (index < val.length) {
+      currentText.value += val.charAt(index);
+      index++;
+    } else {
+      clearInterval(intervalId.value);
+      intervalId.value = null; // 清空 intervalId 的值
+    }
+  }, 200); // 每 200 毫秒显示一个字
 
 };
 </script>
