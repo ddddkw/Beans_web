@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import {ref, onMounted,onUpdated,onUnmounted} from 'vue'
 
-let remarkList = ref(['茶一碗,酒一樽，熙熙攘攘一闲人','鹏北海,凤朝阳，又携书剑路茫茫'])
+let remarkList = ref(['茶一碗，酒一樽，熙熙攘攘一闲人','鹏北海，凤朝阳，又携书剑路茫茫'])
 let starsRef = ref(null); // 定义一个响应式的变量
 const intervalId = ref<number | null>(null); // 明确类型为 number | null
 let currentText = ref('')
