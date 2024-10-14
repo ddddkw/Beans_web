@@ -3,6 +3,7 @@
     <div class="stars" ref="starsRef">
       <div class="star" v-for="(item, index) in starsCount" :key="index"></div>
     </div>
+    <img class="github_icon" src="../assets/github.png" @click="toGithub">
     <div class="home_remark">
       {{currentText}}
     </div>
@@ -58,6 +59,9 @@ const startLoop = ()=>{
   onUnmounted(() => {
     clearInterval(intervalLoop);
   });
+}
+const toGithub=function (){
+  location.href = 'https://github.com/ddddkw/Beans_web/'
 }
 const startTyping = (val) => {
   let index = 0;
