@@ -70,7 +70,7 @@ const startTyping = (val) => {
       clearInterval(intervalId.value);
       intervalId.value = null; // 清空 intervalId 的值
     }
-  }, 200); // 每 200 毫秒显示一个字
+  }, 400); // 每 200 毫秒显示一个字
 
 };
 </script>
