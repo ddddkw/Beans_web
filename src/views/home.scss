@@ -47,3 +47,21 @@
   top: 0;
   backface-visibility: hidden;
 }
+.home_remark {
+  position: relative;
+  top: 30%;
+  text-align: center;
+}
+.entry_class {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  button {
+    height: 60px;
+    width: 300px;
+    font-size: 18px;
+    color: white;
+    background: transparent;
+    border-color: transparent;
+  }
+}

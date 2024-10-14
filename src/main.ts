@@ -6,7 +6,7 @@ import { registerMicroApps, start } from 'qiankun'
 registerMicroApps([
     {
         name: 'tools_web', //子应用的名称
-        entry: '//localhost:3001', //子项目启动后的地址
+        entry: '//localhost:3099', //子项目启动后的地址
         container: '#container', //加载的容器
         activeRule: '/tools_web' //匹配的路由
     }
