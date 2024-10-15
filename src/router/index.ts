@@ -1,4 +1,5 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
+import blogRouters from './blog'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
@@ -11,11 +12,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../components/tools_web.vue'),
     },
 ]
-
+const all_routes: Array<RouteRecordRaw> = [...routes,...blogRouters]
 const router = createRouter({
     // history: createWebHistory(),     // history：路由中不含 `#`
     history: createWebHashHistory(),    // hash：路由中附带 `#`
-    routes
+    routes: all_routes,
 })
 
 export default router

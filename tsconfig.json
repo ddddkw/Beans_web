@@ -14,6 +14,12 @@
     },
     "types": ["webpack-env"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "node_modules/unplugin-auto-import/auto-imports.d.ts",
+    "node_modules/unplugin-auto-import/auto-imports.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

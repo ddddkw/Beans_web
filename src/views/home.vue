@@ -3,17 +3,19 @@
     <div class="stars" ref="starsRef">
       <div class="star" v-for="(item, index) in starsCount" :key="index"></div>
     </div>
-    <img class="github_icon" src="../assets/github.png" @click="toGithub">
+    <img class="github_icon" src="../assets/github.png" @click="toGithub"/>
+    <img class="tool_icon" src="../assets/beans_tool.png" @click="toBlogHome"/>
     <div class="home_remark">
       {{currentText}}
     </div>
     <div class="entry_class">
-      <el-button>进入blog...</el-button>
+      <el-button @click="toBlogHome">进入blog...</el-button>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import {ref, onMounted,onUpdated,onUnmounted} from 'vue'
+import router from "@/router";
 
 let remarkList = ref(['茶一碗，酒一樽，熙熙攘攘一闲人','鹏北海，凤朝阳，又携书剑路茫茫'])
 let starsRef = ref(null); // 定义一个响应式的变量
@@ -77,6 +79,9 @@ const startTyping = (val) => {
   }, 400); // 每 200 毫秒显示一个字
 
 };
+const toBlogHome =function () {
+  router.push('blog')
+}
 </script>
 <style lang="scss" scoped>
 @import "./home";
