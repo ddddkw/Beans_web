@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <Header />
     <div class="blog_container">
-      blog_home
+      <div  class="blog_item"></div>
     </div>
     <Footer ref="footerRef"/>
   </div>
@@ -9,6 +10,7 @@
 <script lang="ts" setup>
 import Footer from '../../components/footer.vue'
 import {ref} from "vue";
+import Header from '../../components/header.vue'
 const footerRef = ref(null);
 
 </script>

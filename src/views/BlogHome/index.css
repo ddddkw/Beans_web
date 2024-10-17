@@ -8,8 +8,11 @@
 }
 .blog_container{
     width: 80%;
-    height: calc(100% - 150px);
-    margin: 0 auto;
+    height: calc(100% - 210px);
+    margin: 60px auto 0 auto;
+}
+.blog_item {
+    height: 100px;
 }
 
 
