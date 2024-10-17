@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
 import { registerMicroApps, start } from 'qiankun'
+import http from "@/utils/request";
 // 注册微应用
 registerMicroApps([
     {
@@ -15,4 +16,5 @@ registerMicroApps([
 start()
 const app = createApp(App)
 app.use(router)
+app.config.globalProperties.$http=http
 app.mount('#app')
