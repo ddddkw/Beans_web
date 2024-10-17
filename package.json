@@ -13,6 +13,7 @@
     "@rollup/rollup-win32-x64-msvc": "^4.24.0",
     "alova": "^3.1.0",
     "element-plus": "^2.8.5",
+    "md-editor-v3": "^4.21.0",
     "qiankun": "^2.10.16",
     "vue": "^3.5.12",
     "vue-router": "^4.0.13"
