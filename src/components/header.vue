@@ -12,7 +12,7 @@ const toGithub=function (){
   location.href = 'https://github.com/ddddkw/Beans_web/'
 }
 const toTools = function () {
-  location.href = 'https://github.com/ddddkw/Beans_web/'
+  router.push('/tools_web')
 }
 const toHome = function (){
   router.push('/')

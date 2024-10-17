@@ -1,8 +1,84 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div class="container">
     <Header />
     <div class="blog_container">
-      <div  class="blog_item"></div>
+      <div class="container_left">
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+        <div class="blog_left">
+          <div class="article_title">测试文章标题</div>
+          <div class="article_time">
+            <el-icon><Calendar/></el-icon>&nbsp;&nbsp;<span>2024-10-17</span>
+          </div>
+          <div class="article_content">
+            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+          </div>
+          <div class="article_bottom">阅读更多</div>
+        </div>
+      </div>
+      <div class="container_right">
+        <div class="blog_right">
+          2222
+        </div>
+      </div>
     </div>
     <Footer ref="footerRef"/>
   </div>

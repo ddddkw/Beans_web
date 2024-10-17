@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@rollup/rollup-win32-x64-msvc": "^4.24.0",
     "alova": "^3.1.0",
     "element-plus": "^2.8.5",
