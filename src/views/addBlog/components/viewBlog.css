@@ -1,0 +1,6 @@
+.view_container {
+    width: 60%;
+    height: calc(100% - 180px);
+    color: white;
+    margin: 60px auto 0 auto;
+}

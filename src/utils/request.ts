@@ -2,6 +2,8 @@ import { createAlova } from 'alova';
 import adapterFetch from 'alova/fetch';
 const headers = {'Content-Type': 'application/json;charset=UTF-8'};
 const alovaInstance = createAlova({
+    baseURL: 'http://www.peaceandlove.asia',
+
     requestAdapter: adapterFetch(),
     // 请求拦截器
     beforeRequest(){

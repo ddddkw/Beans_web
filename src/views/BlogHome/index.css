@@ -5,6 +5,7 @@
     background: radial-gradient(200% 100% at bottom center, #004494, #001f3f);
     background: radial-gradient(200% 105% at top center, #001f3f 10%, #003359 40%, #004494 65%, #001f3f);
     overflow: hidden;
+    position: relative;
 }
 .blog_container{
     width: 60%;
@@ -77,6 +78,23 @@
 .relatedItems {
     height: 30px;
     line-height: 30px;
+}
+.relatedTags {
+    margin-top: 15px;
+    padding: 10px 10px;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+}
+.desk_pet {
+    position: absolute;
+    height: 200px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 9999;
+    transition: transform 2s ease-in-out;
 }
 
 
