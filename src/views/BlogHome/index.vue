@@ -81,7 +81,7 @@ const searchBlog = function () {
 const moveTimeout = function (){
   timeoutId = setTimeout(()=>{
     moveRandomly()
-  },2000)
+  },500)
 }
 const moveRandomly = function () {
   if (!movingElement.value) return;
@@ -122,6 +122,12 @@ const moveRandomly = function () {
 
   transformOptions.value.x = transformOptions.value.x+dx
   transformOptions.value.y = transformOptions.value.y+dy
+  if (Math.abs(transformOptions.value.x) > containerWidth) {
+    transformOptions.value.x =0
+  }
+  if (Math.abs(transformOptions.value.y) > containerHeight) {
+    transformOptions.value.y =0
+  }
   // 更新元素的位置
   element.style.transform = `translate(${transformOptions.value.x}px, ${transformOptions.value.y}px)`;
 
