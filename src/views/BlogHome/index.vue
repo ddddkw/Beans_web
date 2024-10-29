@@ -4,15 +4,15 @@
     <img ref="movingElement" class="desk_pet" src="../../assets/Squirrel.gif">
     <div v-if="!isViewBlog" class="blog_container">
       <div class="container_left">
-        <div class="blog_left">
-          <div class="article_title">测试文章标题</div>
+        <div class="blog_left" v-for="(item,index) in BlogsList" :key="index">
+          <div class="article_title">{{item.title}}</div>
           <div class="article_time">
-            <el-icon><Calendar/></el-icon>&nbsp;<span>2024-10-17</span>
+            <el-icon><Calendar/></el-icon>&nbsp;<span>{{item.createTime}}</span>
           </div>
           <div class="article_content">
-            当你使用半透明背景颜色时，选择合适的文字颜色非常重要，以确保文本的可读性和视觉效果。对于背景颜色 background-color: rgba(255, 255, 255, 0.2);，即一个非常浅的半透明白色背景，建议使用深色的文字颜色，以确保对比度和可读性。
+            简介：{{item.summary}}
           </div>
-          <div class="article_bottom" @click="readMore()">阅读更多</div>
+          <div class="article_bottom" @click="readMore(item)">阅读更多</div>
         </div>
       </div>
       <div class="container_right">
@@ -44,7 +44,9 @@
         </div>
       </div>
     </div>
-    <viewBlog v-if="isViewBlog" ref="viewBlogRef" @reBack="reBack"/>
+    <div class="blog_container">
+      <viewBlog v-if="isViewBlog" ref="viewBlogRef" @reBack="reBack" :viewItem="viewItem"/>
+    </div>
     <Footer ref="footerRef"/>
   </div>
 </template>
@@ -53,6 +55,9 @@ import Footer from '../../components/footer.vue'
 import {ref, onMounted, onUnmounted, nextTick} from "vue";
 import Header from '../../components/header.vue'
 import viewBlog from '../addBlog/components/viewBlog.vue'
+import { getCurrentInstance } from 'vue';
+
+const { proxy } = getCurrentInstance();
 
 const footerRef = ref(null);
 const viewBlogRef = ref(null);
@@ -61,14 +66,28 @@ let isViewBlog = ref(false)
 let transformOptions =ref({x:0,y:0})
 const movingElement = ref(null)
 let timeoutId;
+let BlogsList = ref([])
+let viewItem = ref({})
+let queryForm = ref({
+  "createTime": "",
+  "pageIndex": 1,
+  "pageSize": 10,
+  "summary": "",
+  "tagType": "",
+  "title": "",
+  "total": ''
+})
+
 onMounted(async ()=>{
   await nextTick()
   moveRandomly()
+  getBlogsList()
 });
 onUnmounted(()=>{
   clearTimeout(timeoutId);
 })
-const readMore = function (value:string) {
+const readMore = function (item:object) {
+  viewItem.value = item
   isViewBlog.value=true
 }
 
@@ -77,6 +96,11 @@ const reBack = function (){
 }
 const searchBlog = function () {
 
+}
+const getBlogsList = function (){
+  proxy.$http.post('beans/Blogs/QueryList',queryForm.value).then((res)=>{
+    BlogsList.value= res.data.records
+  })
 }
 const moveTimeout = function (){
   timeoutId = setTimeout(()=>{
