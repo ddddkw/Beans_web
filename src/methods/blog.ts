@@ -1,4 +1,4 @@
 import http from '@/utils/request';
-export const addBlog = (param: Record<string, any>) => http.post("togs/getVlogs/addVlogs", param)
-export const getTags = () => http.get("togs/getVlogs/queryTags")
-export const addTags = (param: Record<string, any>) => http.post("togs/getVlogs/addTags", param)
+export const addBlog = (param: Record<string, any>) => http.post("beans/tags/addVlogs", param)
+export const getTags = () => http.get("beans/tags/queryTags")
+export const addTags = (param: Record<string, any>) => http.post("beans/tags/addTags", param)

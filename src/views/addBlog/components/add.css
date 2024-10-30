@@ -9,6 +9,8 @@
     height: 100vh
 }
 .btn_header{
-    display: flex;
-    justify-content: space-between;
+    text-align: right;
+}
+.md-editor{
+    height: calc(100vh - 300px);
 }
