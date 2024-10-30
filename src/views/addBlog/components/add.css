@@ -1,0 +1,14 @@
+.row-container:not(:last-child) {
+    margin-bottom: 16px;
+}
+.form_style{
+    margin-top: 15px;
+}
+.card_style{
+    /*height: calc(100vh - 150px)*/
+    height: 100vh
+}
+.btn_header{
+    display: flex;
+    justify-content: space-between;
+}

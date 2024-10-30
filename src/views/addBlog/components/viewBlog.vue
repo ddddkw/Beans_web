@@ -1,11 +1,13 @@
 <template>
   <div class="view_container">
-    <el-icon :size="20" @click="reBack"><Back/></el-icon>
-    <MdPreview :editorId="id" :modelValue="viewItem.content" />
+    <el-icon class="reBack" :size="20" @click="reBack"><Back/></el-icon>
+    <div class="view_body">
+      <MdPreview :editorId="id" :modelValue="viewItem.content" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { MdPreview } from 'md-editor-v3';
+import { MdPreview, MdCatalog  } from 'md-editor-v3';
 import 'md-editor-v3/lib/preview.css';
 import { ref } from 'vue'
 import { defineProps } from 'vue';
@@ -16,7 +18,6 @@ const props = defineProps({
     default: {}
   },
 });
-
 const id = 'preview-only';
 const emit = defineEmits(['reBack'])
 const reBack=()=>{

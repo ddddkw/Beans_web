@@ -95,6 +95,7 @@
     right: 0px;
     z-index: 9999;
     transition: transform 2s ease-in-out;
+    pointer-events: none;
 }
 
 

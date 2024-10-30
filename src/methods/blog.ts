@@ -1,0 +1,4 @@
+import http from '@/utils/request';
+export const addBlog = (param: Record<string, any>) => http.post("togs/getVlogs/addVlogs", param)
+export const getTags = () => http.get("togs/getVlogs/queryTags")
+export const addTags = (param: Record<string, any>) => http.post("togs/getVlogs/addTags", param)

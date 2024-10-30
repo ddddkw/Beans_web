@@ -7,3 +7,16 @@
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+.reBack {
+    margin-bottom: 10px;
+}
+.view_body {
+    display: flex;
+}
+/deep/.md-editor-previewOnly {
+    background-color: rgba(255, 255, 255, 0.8)!important;
+    border-radius: 20px!important;
+}
+/deep/.md-editor-preview-wrapper {
+    background-color: rgba(255, 255, 255, 0.8)!important;
+}
