@@ -26,21 +26,12 @@
           />
         </div>
         <div class="relatedBlogs">
-          <div class="relatedItems">
-            vue3新特性详解
-          </div>
-          <div class="relatedItems">
-            vue3新特性详解
-          </div>
-          <div class="relatedItems">
-            vue3新特性详解
-          </div>
-          <div class="relatedItems">
-            vue3新特性详解
+          <div v-for="(item,index) in BlogsList" :key="index" class="relatedItems">
+            {{item.title}}
           </div>
         </div>
         <div class="relatedTags">
-          1111
+          <el-tag class="tag_item" v-for="(item,index) in tagsList" :key="index" type="primary">{{item.tag}}</el-tag>
         </div>
       </div>
     </div>
@@ -56,6 +47,7 @@ import {ref, onMounted, onUnmounted, nextTick} from "vue";
 import Header from '../../components/header.vue'
 import viewBlog from '../addBlog/components/viewBlog.vue'
 import { getCurrentInstance } from 'vue';
+import {getTags} from "@/methods/blog";
 
 const { proxy } = getCurrentInstance();
 
@@ -68,6 +60,7 @@ const movingElement = ref(null)
 let timeoutId;
 let BlogsList = ref([])
 let viewItem = ref({})
+let tagsList = ref([])
 let queryForm = ref({
   "createTime": "",
   "pageIndex": 1,
@@ -82,6 +75,9 @@ onMounted(async ()=>{
   await nextTick()
   moveRandomly()
   getBlogsList()
+  getTags().send(true).then(res=>{
+    tagsList.value = res.data
+  })
 });
 onUnmounted(()=>{
   clearTimeout(timeoutId);
