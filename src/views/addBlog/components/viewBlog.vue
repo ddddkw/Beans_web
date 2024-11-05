@@ -1,6 +1,7 @@
 <template>
   <div class="view_container">
     <el-icon class="reBack" :size="20" @click="reBack"><Back/></el-icon>
+    <div class="blog_title">{{viewItem.title}}</div>
     <div class="view_body">
       <MdPreview :editorId="id" :modelValue="viewItem.content" />
     </div>

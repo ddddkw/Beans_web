@@ -4,16 +4,19 @@
     <img ref="movingElement" class="desk_pet" src="../../assets/Squirrel.gif">
     <div v-if="!isViewBlog" class="blog_container">
       <div class="container_left">
-        <div class="blog_left" v-for="(item,index) in BlogsList" :key="index">
-          <div class="article_title">{{item.title}}</div>
-          <div class="article_time">
-            <el-icon><Calendar/></el-icon>&nbsp;<span>{{item.createTime}}</span>
+        <div class="blog_item">
+          <div class="blog_left" v-for="(item,index) in BlogsList" :key="index">
+            <div class="article_title">{{item.title}}</div>
+            <div class="article_time">
+              <el-icon><Calendar/></el-icon>&nbsp;<span>{{item.createTime}}</span>
+            </div>
+            <div class="article_content">
+              简介：{{item.summary}}
+            </div>
+            <div class="article_bottom" @click="readMore(item)">阅读更多</div>
           </div>
-          <div class="article_content">
-            简介：{{item.summary}}
-          </div>
-          <div class="article_bottom" @click="readMore(item)">阅读更多</div>
         </div>
+        <el-pagination class="pagination" layout="prev, pager, next" :total="50" />
       </div>
       <div class="container_right">
         <div class="blog_search">
@@ -26,6 +29,7 @@
           />
         </div>
         <div class="relatedBlogs">
+          <div class="recommend_articles">推荐文章：</div>
           <div v-for="(item,index) in BlogsList" :key="index" class="relatedItems">
             {{item.title}}
           </div>
@@ -35,8 +39,8 @@
         </div>
       </div>
     </div>
-    <div class="blog_container">
-      <viewBlog v-if="isViewBlog" ref="viewBlogRef" @reBack="reBack" :viewItem="viewItem"/>
+    <div v-if="isViewBlog" class="blog_container">
+      <viewBlog ref="viewBlogRef" @reBack="reBack" :viewItem="viewItem"/>
     </div>
     <Footer ref="footerRef"/>
   </div>
@@ -96,6 +100,9 @@ const searchBlog = function () {
 const getBlogsList = function (){
   proxy.$http.post('beans/Blogs/QueryList',queryForm.value).then((res)=>{
     BlogsList.value= res.data.records
+    BlogsList.value.forEach(item=>{
+      item.createTime = item.createTime.split('T')[0]
+    })
   })
 }
 const moveTimeout = function (){

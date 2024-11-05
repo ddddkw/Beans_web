@@ -9,8 +9,8 @@
 <style lang="scss" scoped>
 .foot_container {
   color: white;
-  height: 120px;
-  line-height: 120px;
+  height: 100px;
+  line-height: 100px;
   text-align: center;
   width: 100%;
   position: fixed;

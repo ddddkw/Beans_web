@@ -1,10 +1,8 @@
 <template>
   <div>
     <el-card class="card_style">
-      <div class="btn_header">
-        <el-button theme="primary" @click="saveVlog">保存</el-button>
-      </div>
-      <el-form ref="form" class="form_style" layout="inline" label-width="auto">
+      <el-button style="float: right" theme="primary" @click="saveVlog">保存</el-button>
+      <el-form ref="form" :inline="true" class="form_style" label-width="auto">
         <el-form-item label="标题：" label-align="left" name="name">
           <el-input v-model="formData.title" style="width: 200px" placeholder="请输入标题"></el-input>
         </el-form-item>
