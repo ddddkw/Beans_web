@@ -2,6 +2,7 @@
   <div class="header_container">
     <img class="back_icon" src="../assets/back.png" @click="toHome"/>
     <img class="github_icon" src="../assets/github.png" @click="toGithub"/>
+    <img class="black_icon" src="../assets/blackHole.png" @click="toEdit"/>
     <img class="tool_icon" src="../assets/beans_tool.png" @click="toTools"/>
   </div>
 </template>
@@ -17,6 +18,9 @@ const toTools = function () {
 const toHome = function (){
   router.push('/')
 }
+const toEdit = function () {
+  router.push('/addBlog')
+}
 </script>
 <style lang="scss" scoped>
 .header_container {
@@ -30,7 +34,7 @@ const toHome = function (){
 .back_icon {
   position: absolute;
   top: 13px;
-  right: 130px;
+  right: 180px;
   height: 30px;
   width: 30px;
   cursor: pointer;
@@ -46,9 +50,26 @@ const toHome = function (){
 .tool_icon {
   position: absolute;
   top: 13px;
+  right: 130px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.black_icon {
+  position: absolute;
+  top: 13px;
   right: 80px;
   height: 30px;
   width: 30px;
   cursor: pointer;
+  animation:rotate 2s linear infinite;;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 </style>

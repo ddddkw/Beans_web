@@ -16,7 +16,7 @@
             <div class="article_bottom" @click="readMore(item)">阅读更多</div>
           </div>
         </div>
-        <el-pagination class="pagination" layout="prev, pager, next" :total="50" />
+        <el-pagination class="pagination" layout="prev, pager, next" :total="total" />
       </div>
       <div class="container_right">
         <div class="blog_search">
@@ -62,6 +62,7 @@ let isViewBlog = ref(false)
 let transformOptions =ref({x:0,y:0})
 const movingElement = ref(null)
 let timeoutId;
+let total = ref(0)
 let BlogsList = ref([])
 let viewItem = ref({})
 let tagsList = ref([])
@@ -100,6 +101,7 @@ const searchBlog = function () {
 const getBlogsList = function (){
   proxy.$http.post('beans/Blogs/QueryList',queryForm.value).then((res)=>{
     BlogsList.value= res.data.records
+    total.value = res.data.total
     BlogsList.value.forEach(item=>{
       item.createTime = item.createTime.split('T')[0]
     })

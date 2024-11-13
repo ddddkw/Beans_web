@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card class="card_style">
+    <div class="card_style">
       <el-button style="float: right" theme="primary" @click="saveVlog">保存</el-button>
       <el-form ref="form" :inline="true" class="form_style" label-width="auto">
         <el-form-item label="标题：" label-align="left" name="name">
@@ -28,7 +28,7 @@
       <div style="border: 1px solid #ccc;margin-top: 20px">
         <MdEditor style="overflow-y: hidden;" :customIcon="CustomIcon" v-model="content" :showToolbarName="true"/>
       </div>
-    </el-card>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
